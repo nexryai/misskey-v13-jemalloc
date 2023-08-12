@@ -24,7 +24,9 @@ jobs:
       - name: Clone original misskey repo
         run: |
           git clone https://github.com/misskey-dev/misskey/ src
-          git checkout master
+          cd src
+          git checkout 13.14.2
+          cd ..
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
